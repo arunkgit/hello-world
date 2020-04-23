@@ -21,15 +21,9 @@
     <module>webapp</module>
   </modules>
 
-  <distributionManagement>
-    <site>
-      <id>site-server</id>
-      <name>Test Project Site</name>
-      <url>file:///tmp/maven-project-site</url>
-    </site>
-  </distributionManagement>
+  
 
-  <build>
+ <build>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -216,5 +210,24 @@
   <prerequisites>
     <maven>3.0.3</maven>
   </prerequisites>
-
+         
+  <distributionManagement>
+        <snapshotRepository>
+                     <id>nexus</id>
+                     <url>http://10.220.110.10:8081/repository/halosys-snapshot/</url>
+        </snapshotRepository>
+		
+		<repository>
+		    <id>nexus</id>
+		    <url>http://10.220.110.10:8081/repository/halosys-release/</url>
+		</repository>
+   </distributionManagement>
+         
+   <repositories>
+    <repository>
+      <id>nexus</id>
+      <url>http://54.86.108.53:8081/repository/halosys-group/</url>
+    </repository>
+  </repositories>
+    
 </project>
